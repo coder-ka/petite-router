@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "petite-router-workspace",
+  "workspaces": [
+    "example",
+    "petite-router"
+  ]
+}
