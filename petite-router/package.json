@@ -1,7 +1,10 @@
 {
   "name": "@coder-ka/petite-router",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "license": "MIT",
+  "description": "Manage session history with JavaScript",
+  "author": "KOeda <coder.ka.issues@gmail.com>",
+  "repository": "coder-ka/petite-router",
   "main": "./dist/petite-router.cjs",
   "module": "./dist/petite-router.mjs",
   "exports": {
