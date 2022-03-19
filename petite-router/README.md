@@ -2,7 +2,8 @@
 
 Petite Router is a minimalistic router library for React.
 
-[日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
+- [Universal](https://github.com/coder-ka/petite-router/blob/master/README_universal.md)
+- [日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
 
 ## Features
 
@@ -55,7 +56,9 @@ export default PepiteRouter();
 and import it.
 
 ```tsx
-import { Router, history } from ". /router.ts`
+import router from ". /router`
+
+const { Route, history } = router;
 ```
 
 ### `exact` attribtue

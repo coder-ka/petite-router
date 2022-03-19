@@ -2,8 +2,8 @@
 
 Petite Router is a minimalistic router library for React.
 
-[Universal](https://github.com/coder-ka/petite-router/blob/master/README_universal.md)
-[日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
+- [Universal](https://github.com/coder-ka/petite-router/blob/master/README_universal.md)
+- [日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
 
 ## Features
 
