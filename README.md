@@ -2,6 +2,7 @@
 
 Petite Router is a minimalistic router library for React.
 
+[Universal](https://github.com/coder-ka/petite-router/blob/master/README_universal.md)
 [日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
 
 ## Features
@@ -55,7 +56,9 @@ export default PepiteRouter();
 and import it.
 
 ```tsx
-import { Router, history } from ". /router.ts`
+import router from ". /router`
+
+const { Route, history } = router;
 ```
 
 ### `exact` attribtue
@@ -66,7 +69,7 @@ If you want to match the expression only for url like `http://example.com/`, jus
 
 ### `history` variable
 
-The `history` variable in the previous example is [createBrowserHistory](https://github.com/remix-run/history/blob/) of [history](https://github.com/remix-run/history) v4/docs/GettingStarted.md#basic-usage).
+The `history` variable in the previous example is [createBrowserHistory](https://github.com/remix-run/history/blob/dev/docs/getting-started.md) of [history](https://github.com/remix-run/history).
 
 Thus, you can navigate programmatically using `history` variable. (e.g. `history.push`).
 
@@ -116,7 +119,7 @@ The `name` argument is inferred by TypeScript and it help you preventing typos f
 
 `PetiteRouter` function takes parameters as follows.
 
-- `history` -- A `history` object.
+- `history` - A `history` object.
 
 ```ts
 import { PetiteRouter } from "@coder-ka/petite-router";
@@ -135,6 +138,6 @@ export default PepiteRouter({
 
 There is no specific format.
 
-Please feel free to send us a pull request.
+Please feel free to send me a PR.
 
-Also most of this README is translated by Deepl, so please send me a PR if you find something wrong.
+Also most of this README is translated by Deepl, so please send me a PR if you find something wrong with my english.

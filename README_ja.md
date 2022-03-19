@@ -53,7 +53,9 @@ export default PepiteRouter();
 そして、下記のように`import`します。
 
 ```tsx
-import { Router, history } from "./router.ts`
+import router from ". /router`
+
+const { Route, history } = router;
 ```
 
 ## `exact`

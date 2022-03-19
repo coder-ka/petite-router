@@ -62,7 +62,7 @@ function joinPath(path1: string, path2: string) {
 }
 
 export type RouteParameters<Route extends string> = string extends Route
-  ? ParamsDictionary
+    ? ParamsDictionary
   : Route extends `${string}(${string}`
   ? ParamsDictionary //TODO: handling for regex parameters
   : Route extends `${string}:${infer Rest}`

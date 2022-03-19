@@ -1,30 +1,19 @@
-import { PetiteRouter } from "@coder-ka/petite-router";
+import router from "./router";
 
-const { Route, history } = PetiteRouter();
+const { Route, history } = router;
 
 function App() {
   return (
     <div>
-      <a href="/">home</a>
+      <a href="/">goto home</a>
       <br />
-      <a href="/about">about</a>
-      <br />
-      <a href="/fruits/apple">apple</a>
-      <br />
-
-      <button onClick={() => history.push("/fruits/banana")}>banana</button>
+      <button onClick={() => history.push('/about')}>goto about</button>
       <br />
 
       <Route path="/" exact>
         home
       </Route>
       <Route path="/about">about</Route>
-      <Route path="fruits">
-        I like
-        <Route path="/:fruitsName">
-          {({ fruitsName }) => <span>{fruitsName}.</span>}
-        </Route>
-      </Route>
     </div>
   );
 }
