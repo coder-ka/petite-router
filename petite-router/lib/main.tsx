@@ -54,6 +54,11 @@ export function PetiteRouter(options = { history: createBrowserHistory() }) {
   };
 }
 
+const defaultRouter = PetiteRouter();
+export default defaultRouter;
+export const Route = defaultRouter.Route
+export const history = defaultRouter.history
+
 function joinPath(path1: string, path2: string) {
   return (
     (path1[0] === "/" ? path1 : "/" + path1) +

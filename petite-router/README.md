@@ -24,6 +24,9 @@ import { PetiteRouter } from "@coder-ka/petite-router";
 
 const { Route, history } = PetiteRouter();
 
+// or shorter usage
+// import { default as router, Route, history } from "@coder-ka/petite-router";
+
 function App() {
   return (
     <div>
