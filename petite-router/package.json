@@ -19,7 +19,8 @@
   "scripts": {
     "build": "concurrently --raw \"tsc\" \"npm run build:mjs\" \"npm run build:cjs\"",
     "build:mjs": "esbuild lib/main.tsx --minify --format=esm --outfile=dist/petite-router.mjs",
-    "build:cjs": "esbuild lib/main.tsx --minify --format=cjs --outfile=dist/petite-router.cjs"
+    "build:cjs": "esbuild lib/main.tsx --minify --format=cjs --outfile=dist/petite-router.cjs",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",
