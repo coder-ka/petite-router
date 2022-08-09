@@ -1,5 +1,5 @@
 import { match } from "path-to-regexp";
-import { createBrowserHistory } from "history";
+import type { History } from "history";
 import React, {
   createContext,
   ReactNode,
@@ -10,7 +10,7 @@ import React, {
 
 const Context = createContext({ path: "/" });
 
-export function PetiteRouter(options = { history: createBrowserHistory() }) {
+export function PetiteRouter(options: { history: History }) {
   const { history } = options;
 
   function Route<TPath extends string>(props: {
@@ -54,11 +54,6 @@ export function PetiteRouter(options = { history: createBrowserHistory() }) {
   };
 }
 
-const defaultRouter = PetiteRouter();
-export default defaultRouter;
-export const Route = defaultRouter.Route
-export const history = defaultRouter.history
-
 function joinPath(path1: string, path2: string) {
   return (
     (path1[0] === "/" ? path1 : "/" + path1) +
@@ -67,7 +62,7 @@ function joinPath(path1: string, path2: string) {
 }
 
 export type RouteParameters<Route extends string> = string extends Route
-    ? ParamsDictionary
+  ? ParamsDictionary
   : Route extends `${string}(${string}`
   ? ParamsDictionary //TODO: handling for regex parameters
   : Route extends `${string}:${infer Rest}`
