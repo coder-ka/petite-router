@@ -1,13 +1,11 @@
-import router from "./router";
-
-const { Route, history } = router;
+import { Route, history } from "./router";
 
 function App() {
   return (
     <div>
       <a href="/">goto home</a>
       <br />
-      <button onClick={() => history.push('/about')}>goto about</button>
+      <button onClick={() => history.push("/about")}>goto about</button>
       <br />
 
       <Route path="/" exact>
