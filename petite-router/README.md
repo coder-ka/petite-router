@@ -49,8 +49,11 @@ Usually, `router.ts` should be created and expose `Route` component and `history
 
 ```ts
 import { PetiteRouter } from "@coder-ka/petite-router";
+import { createBrowserHistory } from "history";
 
-const router = PepiteRouter();
+const router = PepiteRouter({
+  history: createBrowserHistory(),
+});
 
 export const Route = router.Route;
 export const history = router.history;
@@ -115,6 +118,19 @@ function App() {
 ```
 
 The `name` argument is inferred by TypeScript and it help you preventing typos for parameter names.
+
+## Server-side rendering
+
+Vite example below.
+
+```ts
+import { PetiteRouter } from "@coder-ka/petite-router";
+import { createBrowserHistory, createMemoryHistory } from "history";
+
+const router = PepiteRouter({
+  history: import.meta.env.SSR ? createMemoryHistory() : createBrowserHistory(),
+});
+```
 
 ## TODO
 
