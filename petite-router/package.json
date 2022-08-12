@@ -1,6 +1,6 @@
 {
   "name": "@coder-ka/petite-router",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license": "MIT",
   "description": "Manage session history with JavaScript",
   "author": "KOeda <coder.ka.issues@gmail.com>",

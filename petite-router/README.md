@@ -2,9 +2,6 @@
 
 Petite Router is a minimalistic router library for React.
 
-- [Universal](https://github.com/coder-ka/petite-router/blob/master/README_universal.md)
-- [日本語版](https://github.com/coder-ka/petite-router/blob/master/README_ja.md)
-
 ## Features
 
 - Super simple and intuitive.
@@ -21,11 +18,11 @@ The following example implements two routes, `home` and `about`.
 
 ```tsx
 import { PetiteRouter } from "@coder-ka/petite-router";
+import { createBrowserHistory } from "history";
 
-const { Route, history } = PetiteRouter();
-
-// or shorter usage
-// import { default as router, Route, history } from "@coder-ka/petite-router";
+const { Route, history } = PetiteRouter({
+  history: createBrowserHistory(),
+});
 
 function App() {
   return (
@@ -48,20 +45,21 @@ export default App;
 
 You can use `Route` component with `path` attirbute to create routings.
 
-Usually, `router.ts` should be created and expose `router` variable.
+Usually, `router.ts` should be created and expose `Route` component and `history` variable.
 
 ```ts
 import { PetiteRouter } from "@coder-ka/petite-router";
 
-export default PepiteRouter();
+const router = PepiteRouter();
+
+export const Route = router.Route;
+export const history = router.history;
 ```
 
 and import it.
 
 ```tsx
-import router from ". /router`
-
-const { Route, history } = router;
+import { Route, history } from ". /router`
 ```
 
 ### `exact` attribtue
@@ -117,21 +115,6 @@ function App() {
 ```
 
 The `name` argument is inferred by TypeScript and it help you preventing typos for parameter names.
-
-## Changing behavior.
-
-`PetiteRouter` function takes parameters as follows.
-
-- `history` - A `history` object.
-
-```ts
-import { PetiteRouter } from "@coder-ka/petite-router";
-import { createMemoryHistory } from "history";
-
-export default PepiteRouter({
-  history: createMemoryHistory(), // for React Native
-});
-```
 
 ## TODO
 
