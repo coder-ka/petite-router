@@ -9,9 +9,7 @@
     "react",
     "router",
     "route",
-    "minimalistic",
-    "history",
-    "link"
+    "minimalistic"
   ],
   "main": "./dist/petite-router.cjs",
   "module": "./dist/petite-router.mjs",
