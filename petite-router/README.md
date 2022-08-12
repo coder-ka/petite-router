@@ -1,25 +1,28 @@
 # Petite Router
 
-Petite Router is a minimalistic router library for React.
+Petite Router is a minimalistic router for React.
 
 ## Features
 
 - Super simple and intuitive.
-- You can use it wherever you want to use it.
-- And can be combined with other router libraries.
+- You can use it wherever you want.
+- You can combine it with other router libraries.
 
 ## Getting Started
 
 ```bash
-npm install --save @coder-ka/petite-router
+npm install --save @coder-ka/petite-router history
 ```
 
-The following example implements two routes, `home` and `about`.
+Petite Route requires `history` to be installed.(peer dependency)
+
+`history` doc is [here](https://github.com/remix-run/history).
 
 ```tsx
 import { PetiteRouter } from "@coder-ka/petite-router";
 import { createBrowserHistory } from "history";
 
+// create router
 const { Route, history } = PetiteRouter({
   history: createBrowserHistory(),
 });
@@ -27,11 +30,13 @@ const { Route, history } = PetiteRouter({
 function App() {
   return (
     <div>
+      <!-- two links -->
       <a href="/">home</a>
       <br />
       <a href="/about">about</a>
       <br />
 
+      <!-- two routes -->
       <Route path="/" exact>
         home
       </Route>
@@ -42,8 +47,6 @@ function App() {
 
 export default App;
 ```
-
-You can use `Route` component with `path` attirbute to create routings.
 
 Usually, `router.ts` should be created and expose `Route` component and `history` variable.
 
@@ -65,21 +68,29 @@ and import it.
 import { Route, history } from ". /router`
 ```
 
-### `exact` attribtue
+## Route
 
-I specified `exact` attribute for the `/` route in the previous example unless every url matches the route.
+Use `path` attribtue to define route.
 
-If you want to match the expression only for url like `http://example.com/`, just use this attribute.
+`<Route path="/about">about me</Route>`
 
-### `history` variable
+The route above matches urls like
 
-The `history` variable in the previous example is [createBrowserHistory](https://github.com/remix-run/history/blob/dev/docs/getting-started.md) of [history](https://github.com/remix-run/history).
+- `/about`
+- `/about/hoge`
+- `/about/hoge/fuga`
 
-Thus, you can navigate programmatically using `history` variable. (e.g. `history.push`).
+If you want it matches only `/about`, Use `exact` attribute.
 
-## Nested Rotue
+`<Route path="/about" exact>about me</Route>`
 
-You can nest `<Route>` components like below.
+matches only for
+
+- `/about`
+
+### Nested Route
+
+Of course you can nest `<Route>` components like below.
 
 ```tsx
 function App() {
@@ -96,11 +107,9 @@ function App() {
 }
 ```
 
-## Path parameters
+### Path parameters
 
-You can specify placeholder for path parameters.
-
-Because petite-router internally depends on [path-to-regexp](https://github.com/pillarjs/path-to-regexp), so you can specify a `path` attribute as follows.
+You can define path parameters in [path-to-regexp](https://github.com/pillarjs/path-to-regexp) style.(Petite Route internally depends on path-to-regexp)
 
 ```tsx
 function App() {
@@ -117,7 +126,7 @@ function App() {
 }
 ```
 
-The `name` argument is inferred by TypeScript and it help you preventing typos for parameter names.
+**Type inference supported** , so the `name` argument is inferred correctly and it help avoiding typos.
 
 ## Server-side rendering
 
@@ -142,4 +151,4 @@ There is no specific format.
 
 Please feel free to send me a PR.
 
-Also most of this README is translated by Deepl, so please send me a PR if you find something wrong with my english.
+Also please send me a PR if you find something wrong with my english.(I'm Japanese!!)
