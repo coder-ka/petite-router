@@ -48,25 +48,7 @@ function App() {
 export default App;
 ```
 
-Usually, `router.ts` should be created and expose `Route` component and `history` variable.
-
-```ts
-import { PetiteRouter } from "@coder-ka/petite-router";
-import { createBrowserHistory } from "history";
-
-const router = PepiteRouter({
-  history: createBrowserHistory(),
-});
-
-export const Route = router.Route;
-export const history = router.history;
-```
-
-and import it.
-
-```tsx
-import { Route, history } from ". /router`
-```
+[example here](../example).
 
 ## Route
 
