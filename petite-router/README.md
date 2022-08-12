@@ -48,7 +48,7 @@ function App() {
 export default App;
 ```
 
-[example here](../example).
+[example here](https://github.com/coder-ka/petite-router/tree/master/example).
 
 ## Route
 
