@@ -16,7 +16,7 @@ export function PetiteRouter(options: { history: History }) {
   function Route<TPath extends string>(props: {
     path: TPath;
     exact?: boolean;
-    children: ReactNode | ((params: RouteParameters<TPath>) => ReactNode);
+    children?: ReactNode | ((params: RouteParameters<TPath>) => ReactNode);
   }) {
     const parent = useContext(Context);
 
